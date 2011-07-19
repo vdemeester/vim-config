@@ -1,0 +1,36 @@
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule "bundle/snipmate-vim"]
+	path = bundle/snipmate-vim
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = git://github.com/sjl/gundo.vim.git
+[submodule "bundle/orgmode"]
+	path = bundle/orgmode
+	url = git://github.com/jceb/vim-orgmode.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/QFixToggle"]
+	path = bundle/QFixToggle
+	url = git://github.com/sunaku/QFixToggle.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/narrow"]
+	path = bundle/narrow
+	url = git://github.com/kana/vim-narrow.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/unimpaired"]
+	path = bundle/unimpaired
+	url = git://github.com/vdemeester/vim-unimpaired.git
+[submodule "bundle/taglist"]
+    path = bundle/taglist
+	url = git://github.com/vim-scripts/taglist.vim.git
