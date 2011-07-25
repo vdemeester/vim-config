@@ -1,7 +1,8 @@
 " force terminal to use 256 colors
 set t_Co=256
 if has("gui_running")
-	set guifont=Inconsolata-dz\ 9
+    " set guifont=Inconsolata-dz\ 9
+    set guifont=ProFontWindows\ 8
 endif
 
 " Kyushu is a Linux host
