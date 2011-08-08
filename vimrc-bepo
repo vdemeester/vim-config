@@ -56,3 +56,13 @@ noremap g" g0
 " Gundo specific
 let g:gundo_map_move_older = "t"
 let g:gundo_map_move_newer = "s"
+
+" Remapping ] and [ to ) and ( for maps (unimpaired, etc…)
+" https://github.com/tpope/vim-unimpaired/pull/10#issuecomment-1756676
+for s:c in map(range(65,90) + range(97,122),'nr2char(v:val)')
+  exec 'nmap ('.s:c.' ['.s:c
+  exec 'xmap ('.s:c.' ['.s:c
+  exec 'nmap )'.s:c.' ]'.s:c
+  exec 'xmap )'.s:c.' ]'.s:c
+endfor
+
