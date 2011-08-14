@@ -90,6 +90,10 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" Open man page
+" FIXME where does it comes from
+runtime! ftplugin/man.vim
+
 " Remaping mapleader (default is \)
 let mapleader = ","
 let g:mapleader = ","
