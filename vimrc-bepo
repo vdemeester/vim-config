@@ -53,6 +53,12 @@ noremap gÉ :exe "silent! tablast"<CR>
 " optionnel : {g"} pour aller au début de la ligne écran
 noremap g" g0
 
+map <C-c> <C-w>h
+map <C-t> <C-w>j
+map <C-s> <C-w>k
+map <C-r> <C-w>l
+map <C-o> :redo<CR>
+
 " Gundo specific
 let g:gundo_map_move_older = "t"
 let g:gundo_map_move_newer = "s"
