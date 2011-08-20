@@ -175,6 +175,13 @@ vnoremap <silent> # :call VisualSearch('b')<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" From rtomayko : « I use these commands in my TODO file »
+map ,a o<ESC>:r!date +'\%A, \%B \%d, \%Y'<CR>:r!date +'\%A, \%B \%d, \%Y' \| sed 's/./-/g'<CR>A<CR><ESC>
+map ,o o[ ] 
+map ,O O[ ] 
+map ,x :s/^\[ \]/[x]/<CR>
+map ,X :s/^\[x\]/[ ]/<CR>
+
 " Custom gloabal variable These variable could be used in several plugins and
 " are meant to be set (or not) in the hostname-specific config file.
 " Is my keymap in bepo, or not ?
