@@ -1,50 +1,23 @@
-" .vimrc file of Vincent Demeester
-" I tried to comment it as much as I could.
-" 
+" .vimrc
+" Author: Vincent Demeester <vincentATdemeester.fr>
+" Source: https://github.com/vdemeester/vim-config
+"
+" Preambule --------------------------------------------------------------- {{{
 " Load pathogen (if present)
 " This has to be before filetype plugin on as pathogen won't work then.
+filetype off
 runtime pathogen_init
+filetype on
+filetype plugin indent on
 " Drop compatibility
 set nocompatible
-
+" }}}
+" Basic options ----------------------------------------------------------- {{{
 " Set default encoding to utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 " Remembering the 600 last command. Vim default is 20.
 set history=600
-" Backup & Swap file
-" The point here is : tell vim not to write this kind of file in the current 
-" folder (and even deactivate it if possible).
-set nobackup
-set nowb
-set noswapfile
-
-" Enable filetype detection.
-filetype on
-filetype plugin on
-filetype indent on
-if has("gui_running")
-    " Simple GUI, almost similar to console version
-    " i > Use Vim icon
-    " t > tearoff menu items. TODO learn what it means
-    " a > autoselect (means that vim might try to share selection with system.
-    " c > Use console dialogs
-    set guioptions=itac
-    " allocate 2 pixels for folding column (even if no folding present)
-    set foldcolumn=2
-    " Light background on GUI version
-    set background=light
-else
-    if $TERM =~ "-256color"
-        set t_Co=256
-    endif
-    " Dark background on CLI version (as terminal background usually dark)
-    set background=dark
-    " Enable mouse support in CLI
-    set mouse=a
-endif
-" Colorscheme for both dark and light background
-colorscheme solarized
 " Hightlight the line where the cursor is.
 set cursorline
 " Hide the mouse when writing/using vim (who needs a mouse anyway !)
@@ -69,34 +42,81 @@ set magic
 set showmatch
 " Always show the statusline and commandline
 set laststatus=2
-" Change the default statusline
-set statusline=%f\ %m\ %{fugitive#statusline()}\ %h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}\ %{getfperm(@%)}]\ 0x%B\ %12.(%c:%l/%L%)
-
-" Highlight column that are listed (80 and 120)
-if v:version > '702'
-    set colorcolumn=80,120
-endif
-
 " Enhancing command-line completion (with options)
 set wildmenu
 set wildmode=list:longest,list:full
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*~
 " some filetypes got lower priority
 set su=.h,.bak,~,.o,.info,.swp,.obj
-
-" Set tab/space default behvior. The rest is going to be set by filetype
+" Set tab/space default behvior. {{{
+" The rest is going to be set by filetype
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+" }}}
+" Remaping mapleader (default is \) {{{
+let mapleader = ","
+let g:mapleader = ","
+" }}}
+" Status line {{{
+" Change the default statusline
+set statusline=%f\ %m
+set statusline+=\ %{fugitive#statusline()}
+set statusline+=\ %h%r%=[%{&encoding}
+set statusline+=\ %{&fileformat}
+set statusline+=\ %{strlen(&ft)?&ft:'none'}
+set statusline+=\ %{getfperm(@%)}]
+set statusline+=\ 0x%B\ %12.(%c:%l/%L%)
+" }}}
+" Backups {{{
+" Backup & Swap file
+" The point here is : tell vim not to write this kind of file in the current 
+" folder (and even deactivate it if possible).
+"set nobackup
+"set nowb
+"set noswapfile
+set undodir=~/.vim/tmp/undo/     " undo files
+set backupdir=~/.vim/tmp/backup/ " backups
+set directory=~/.vim/tmp/swap/   " swap files
+set backup                        " enable backups
+" Make Vim able to edit crontab files again.
+set backupskip=/tmp/*,/private/tmp/*" 
+" }}}
+" }}}
+" Colors ------------------------------------------------------------------ {{{
+if has("gui_running")
+    " Simple GUI, almost similar to console version
+    " i > Use Vim icon
+    " t > tearoff menu items. TODO learn what it means
+    " a > autoselect (means that vim might try to share selection with system.
+    " c > Use console dialogs
+    set guioptions=itac
+    " allocate 2 pixels for folding column (even if no folding present)
+    set foldcolumn=2
+    " Light background on GUI version
+    set background=light
+else
+    if $TERM =~ "-256color"
+        set t_Co=256
+    endif
+    " Dark background on CLI version (as terminal background usually dark)
+    set background=dark
+    " Enable mouse support in CLI
+    set mouse=a
+endif
+" Colorscheme for both dark and light background
+colorscheme solarized
+" }}}
+
+" Highlight column that are listed (80 and 120)
+if v:version > '702'
+    set colorcolumn=80,120
+endif
 
 " Open man page
 " FIXME where does it comes from
 runtime! ftplugin/man.vim
-
-" Remaping mapleader (default is \)
-let mapleader = ","
-let g:mapleader = ","
 
 " fast reloading & editing .vimrc file
 map <leader>s :source $MYVIMRC<cr>
@@ -198,4 +218,4 @@ endif
 if g:keymap_bepo == 1
     exe 'source ' . $HOME . '/.vim/vimrc-bepo'
 endif
-" vim: set foldmethod=marker
+" vim:foldmethod=marker foldmarker={{{,}}}
