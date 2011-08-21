@@ -1,8 +1,8 @@
 " .vimrc
-" Author: Vincent Demeester <vincentATdemeester.fr>
+" Author: Vincent Demeester <vincent+vim AT demeester.fr>
 " Source: https://github.com/vdemeester/vim-config
 "
-" Preambule --------------------------------------------------------------- {{{
+" Preambule ------------------------------------------------------------------- {{{
 " Load pathogen (if present)
 " This has to be before filetype plugin on as pathogen won't work then.
 filetype off
@@ -12,12 +12,12 @@ filetype plugin indent on
 " Drop compatibility
 set nocompatible
 " }}}
-" Basic options ----------------------------------------------------------- {{{
+" Basic options --------------------------------------------------------------- {{{
 " Set default encoding to utf-8
 set encoding=utf-8
 set fileencoding=utf-8
 " Remembering the 600 last command. Vim default is 20.
-set history=600
+set history=1000
 " Hightlight the line where the cursor is.
 set cursorline
 " Hide the mouse when writing/using vim (who needs a mouse anyway !)
@@ -26,8 +26,37 @@ set mousehide
 set scrolloff=5
 " Do not forbid switching buffer in case of modified buffer
 set hidden
+" Indicates a fast terminal connection
+set ttyfast
+" Do not redraw the screen 
+set lazyredraw
+" Splitting below and right by default
+set splitbelow
+set splitright
+" Resize splits when the window is resized
+au VimResized * exe "normal! \<c-w>="
 " Enable all backspace stuff 
 set backspace=eol,start,indent
+" Always show the statusline and commandline
+set laststatus=2
+" Enhancing command-line completion (with options)
+set wildmenu
+set wildmode=list:longest,list:full
+set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*~,*.hi
+" some filetypes got lower priority
+set su=.h,.bak,~,.o,.info,.swp,.obj
+" Interface characters {{{
+" show list char by default
+set list
+" listchar
+set listchars=nbsp:¤,tab:▸\ ,trail:¤,eol:¬,extends:❯,precedes:❮
+set fillchars=stl:\ ,stlnc:⎼,vert:⎥,fold:\ ,diff:\ 
+set showbreak=↪
+" colorise les nbsp       
+highlight NbSp ctermbg=lightgray guibg=#1A1A1A
+match NbSp /\%xa0/
+" }}}
+" Search {{{
 " Show matches when typing the pattern
 set incsearch
 " Ignore case by default in search
@@ -40,20 +69,20 @@ set hlsearch
 set magic
 " Show the matche pair (for(,[,{,<,…)
 set showmatch
-" Always show the statusline and commandline
-set laststatus=2
-" Enhancing command-line completion (with options)
-set wildmenu
-set wildmode=list:longest,list:full
-set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*~
-" some filetypes got lower priority
-set su=.h,.bak,~,.o,.info,.swp,.obj
+" Open a Quickfix window for the last search
+nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+" }}}
 " Set tab/space default behvior. {{{
 " The rest is going to be set by filetype
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set wrap
+set textwidth=85
+" Stolen from steve losh vim config
+" Better formatoptions
+set formatoptions=qrn1
 " }}}
 " Remaping mapleader (default is \) {{{
 let mapleader = ","
@@ -63,6 +92,9 @@ let g:mapleader = ","
 " Change the default statusline
 set statusline=%f\ %m
 set statusline+=\ %{fugitive#statusline()}
+set statusline+=\ %#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 set statusline+=\ %h%r%=[%{&encoding}
 set statusline+=\ %{&fileformat}
 set statusline+=\ %{strlen(&ft)?&ft:'none'}
@@ -71,20 +103,47 @@ set statusline+=\ 0x%B\ %12.(%c:%l/%L%)
 " }}}
 " Backups {{{
 " Backup & Swap file
-" The point here is : tell vim not to write this kind of file in the current 
-" folder (and even deactivate it if possible).
-"set nobackup
-"set nowb
-"set noswapfile
+" persistant undo
+set undofile
+set undoreload=10000
 set undodir=~/.vim/tmp/undo/     " undo files
+" Do not make backup and swap file in the current dir
 set backupdir=~/.vim/tmp/backup/ " backups
 set directory=~/.vim/tmp/swap/   " swap files
 set backup                        " enable backups
 " Make Vim able to edit crontab files again.
 set backupskip=/tmp/*,/private/tmp/*" 
 " }}}
+" ColorColumn {{{
+" Highlight column that are listed (80 and 120)
+if v:version > '702'
+    set colorcolumn=80,120
+endif
 " }}}
-" Colors ------------------------------------------------------------------ {{{
+" Folding {{{
+set foldlevelstart=0
+" Change the default foldtext
+" From Steve Losh vim configuration file
+function! MyFoldText() " {{{
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+endfunction " }}}
+set foldtext=MyFoldText()
+
+" }}}
+" }}}
+" Colors ---------------------------------------------------------------------- {{{
 if has("gui_running")
     " Simple GUI, almost similar to console version
     " i > Use Vim icon
@@ -105,14 +164,13 @@ else
     " Enable mouse support in CLI
     set mouse=a
 endif
+" Enable syntax !
+syntax enable
 " Colorscheme for both dark and light background
 colorscheme solarized
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " }}}
-
-" Highlight column that are listed (80 and 120)
-if v:version > '702'
-    set colorcolumn=80,120
-endif
 
 " Open man page
 " FIXME where does it comes from
@@ -147,22 +205,11 @@ nmap <leader>tq :QFix<CR>
 let g:netrw_mousemaps = 0
 " Customization : Preview pane (diff) at the bottom of the current buffer
 let g:gundo_preview_bottom = 1
-" Customization of unimpaired keymap (not upstream right now)
-let g:unimpaired_leader_next = ')'
-let g:unimpaired_leader_prev = '('
 
 " Customize fugitive
 if has("autocmd")
     autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
-
-" listchar      
-set listchars=nbsp:¤,tab:▸\ ,trail:¤,extends:>,precedes:<,eol:¬
-
-syntax enable
-" colorise les nbsp       
-highlight NbSp ctermbg=lightgray guibg=#1A1A1A
-match NbSp /\%xa0/
 
 " Fileformat
 set ffs=unix,dos,mac
