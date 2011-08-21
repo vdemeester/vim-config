@@ -16,6 +16,8 @@ set nocompatible
 " Set default encoding to utf-8
 set encoding=utf-8
 set fileencoding=utf-8
+" Fileformat
+set ffs=unix,dos,mac
 " Remembering the 600 last command. Vim default is 20.
 set history=1000
 " Hightlight the line where the cursor is.
@@ -71,6 +73,20 @@ set magic
 set showmatch
 " Open a Quickfix window for the last search
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+" From an idea by Michael Naumann
+function! VisualSearch(direction) range
+  let l:saved_reg = @"
+  execute "normal! vgvy"
+  let l:pattern = escape(@", '\\/.*$^~[]')
+  let l:pattern = substitute(l:pattern, "\n$", "", "")
+  if a:direction == 'b'
+    execute "normal ?" . l:pattern . "^M"
+  else
+    execute "normal /" . l:pattern . "^M"
+  endif
+  let @/ = l:pattern
+  let @" = l:saved_reg
+endfunction
 " }}}
 " Set tab/space default behvior. {{{
 " The rest is going to be set by filetype
@@ -142,6 +158,13 @@ endfunction " }}}
 set foldtext=MyFoldText()
 
 " }}}
+" Completion {{{
+" Better Completion
+set completeopt=longest,menuone,preview
+" }}}
+" Open man page
+" FIXME where does it comes from
+runtime! ftplugin/man.vim
 " }}}
 " Colors ---------------------------------------------------------------------- {{{
 if has("gui_running")
@@ -171,17 +194,27 @@ colorscheme solarized
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " }}}
-
-" Open man page
-" FIXME where does it comes from
-runtime! ftplugin/man.vim
-
+" Quick Editing --------------------------------------------------------------- {{{
 " fast reloading & editing .vimrc file
-map <leader>s :source $MYVIMRC<cr>
-map <leader>e :e! $MYVIMRC<cr>
-" When .vimrc is editited, reoad it automatically
-autocmd! bufwritepost .vimrc source $MYVIMRC
-
+" map <leader>s :source $MYVIMRC<cr>
+map <leader>ev <C-w>s<C-w>t<C-w>L:e $MYVIMRC<cr>
+" }}}
+" Convenience Mapping (leader) ------------------------------------------------ {{{
+"Basically you press * or # to search for the current selection !! Really useful
+vnoremap <silent> * :call VisualSearch('f')<CR>
+vnoremap <silent> # :call VisualSearch('b')<CR>
+" keep the current selection when indenting (thanks cbus)
+vnoremap < <gv
+vnoremap > >gv
+" From rtomayko : « I use these commands in my TODO file »
+map ,a o<ESC>:r!date +'\%A, \%B \%d, \%Y'<CR>:r!date +'\%A, \%B \%d, \%Y' \| sed 's/./-/g'<CR>A<CR><ESC>
+map ,o o[ ] 
+map ,O O[ ] 
+map ,x :s/^\[ \]/[x]/<CR>
+map ,X :s/^\[x\]/[ ]/<CR>
+" Filetype switch
+nmap <leader>fd :se ff=dos<cr>
+nmap <leader>fu :se ff=unix<cr>
 " Quick access to useful funtions
 " - Quick saving
 nmap <leader>w :w!<CR>
@@ -197,58 +230,66 @@ nmap <leader>ts :set spell!<CR>
 map <leader>cd :cd %:p:h<cr>
 " - Toggle Gundo view
 nmap <leader>u :GundoToggle<cr>
-
 " Toggle quicklist window
 nmap <leader>tq :QFix<CR>
-" Customization of netrw
-" - No mouse support on netrw as it is *really* annoying
-let g:netrw_mousemaps = 0
-" Customization : Preview pane (diff) at the bottom of the current buffer
-let g:gundo_preview_bottom = 1
-
-" Customize fugitive
+" Substitute
+nnoremap <leader>s :%s//<left>
+" Easier linewise reselection
+nnoremap <leader>v V`]
+" Tags
+nnoremap <leader>T :!ctags -R -f ./tags .<cr>
+" }}}
+" Filetype-specific stuff ----------------------------------------------------- {{{
+" Vim {{{
+" When .vimrc is editited, reoad it automatically
+autocmd! bufwritepost vimrc source $MYVIMRC
+" }}}
+" }}}
+" Plugin settings ------------------------------------------------------------- {{{
+" Ack {{{
+map <leader>a :Ack
+" }}}
+" Command-T {{{
+let g:CommandTMaxHeight = 20
+" }}}
+" Fugitive {{{
 if has("autocmd")
     autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
-
-" Fileformat
-set ffs=unix,dos,mac
-nmap <leader>fd :se ff=dos<cr>
-nmap <leader>fu :se ff=unix<cr>
-
-""""""""""""""""""""""""""""""
-" Visual
-""""""""""""""""""""""""""""""
-" From an idea by Michael Naumann
-function! VisualSearch(direction) range
-  let l:saved_reg = @"
-  execute "normal! vgvy"
-  let l:pattern = escape(@", '\\/.*$^~[]')
-  let l:pattern = substitute(l:pattern, "\n$", "", "")
-  if a:direction == 'b'
-    execute "normal ?" . l:pattern . "^M"
+" }}}
+" Gundo {{{
+" Customization : Preview pane (diff) at the bottom of the current buffer
+let g:gundo_preview_bottom = 1
+" }}}
+" netrw {{{
+" - No mouse support on netrw as it is *really* annoying
+let g:netrw_mousemaps = 0
+" }}}
+" OrgMode {{{
+let g:org_plugins = ['ShowHide', '|', 'Navigator', 'EditStructure', '|', 'Todo', 'Date', 'Misc']
+let g:org_todo_keywords = ['TODO', '|', 'DONE']
+let g:org_debug = 1
+" }}}
+" Scratch {{{
+command! ScratchToggle call ScratchToggle()
+function! ScratchToggle() " {{{
+  if exists("w:is_scratch_window")
+    unlet w:is_scratch_window
+    exec "q"
   else
-    execute "normal /" . l:pattern . "^M"
+    exec "normal! :Sscratch\<cr>\<C-W>J:resize 13\<cr>"
+    let w:is_scratch_window = 1
   endif
-  let @/ = l:pattern
-  let @" = l:saved_reg
-endfunction
-
-"Basically you press * or # to search for the current selection !! Really useful
-vnoremap <silent> * :call VisualSearch('f')<CR>
-vnoremap <silent> # :call VisualSearch('b')<CR>
-
-" keep the current selection when indenting (thanks cbus)
-vnoremap < <gv
-vnoremap > >gv
-
-" From rtomayko : « I use these commands in my TODO file »
-map ,a o<ESC>:r!date +'\%A, \%B \%d, \%Y'<CR>:r!date +'\%A, \%B \%d, \%Y' \| sed 's/./-/g'<CR>A<CR><ESC>
-map ,o o[ ] 
-map ,O O[ ] 
-map ,x :s/^\[ \]/[x]/<CR>
-map ,X :s/^\[x\]/[ ]/<CR>
-
+endfunction " }}}
+nnoremap <silent> <leader><tab> :ScratchToggle<cr>
+" }}}
+" Syntastic {{{
+let g:syntastic_enable_signs = 1
+let g:syntastic_disabled_filetypes = ['html']
+let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
+" }}}
+" }}}
+" Custom loading host file ---------------------------------------------------- {{{
 " Custom gloabal variable These variable could be used in several plugins and
 " are meant to be set (or not) in the hostname-specific config file.
 " Is my keymap in bepo, or not ?
@@ -265,4 +306,5 @@ endif
 if g:keymap_bepo == 1
     exe 'source ' . $HOME . '/.vim/vimrc-bepo'
 endif
+" }}}
 " vim:foldmethod=marker foldmarker={{{,}}}
