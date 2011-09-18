@@ -267,7 +267,10 @@ let g:netrw_mousemaps = 0
 " }}}
 " OrgMode {{{
 let g:org_plugins = ['ShowHide', '|', 'Navigator', 'EditStructure', '|', 'Todo', 'Date', 'Misc']
-let g:org_todo_keywords = ['TODO', '|', 'DONE']
+let g:org_todo_keywords = [['TODO', 'WAITING', '|', 'DONE'],['|', 'CANCELED']]
+let g:org_todo_keyword_faces = [['WAITING', 'blue'], ['CANCELED',
+\       [':foreground red', ':background black', ':weight bold',
+\       ':slant italic', ':decoration underline']]]
 let g:org_debug = 1
 " }}}
 " Scratch {{{
