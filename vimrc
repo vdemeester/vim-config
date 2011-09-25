@@ -291,6 +291,9 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_disabled_filetypes = ['html']
 let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
 " }}}
+" pandoc {{{
+au BufNewFile,BufRead *.pdc   set filetype=pandoc
+" }}}
 " }}}
 " Custom loading host file ---------------------------------------------------- {{{
 " Custom gloabal variable These variable could be used in several plugins and

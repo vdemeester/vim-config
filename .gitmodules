@@ -43,3 +43,9 @@
 [submodule "bundle/gitv"]
 	path = bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
+[submodule "bundle/pandoc"]
+	path = bundle/pandoc
+	url = git://github.com/vim-pandoc/vim-pandoc.git
+[submodule "bundle/pandoc-extras"]
+	path = bundle/pandoc-extras
+	url = git://github.com/vim-pandoc/vim-pandoc-extras.git
