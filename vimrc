@@ -120,9 +120,11 @@ set statusline+=\ 0x%B\ %12.(%c:%l/%L%)
 " Backups {{{
 " Backup & Swap file
 " persistant undo
-set undofile
-set undoreload=10000
-set undodir=~/.vim/tmp/undo/     " undo files
+if version > 702
+    set undofile
+    set undoreload=10000
+    set undodir=~/.vim/tmp/undo/     " undo files
+endif
 " Do not make backup and swap file in the current dir
 set backupdir=~/.vim/tmp/backup/ " backups
 set directory=~/.vim/tmp/swap/   " swap files
