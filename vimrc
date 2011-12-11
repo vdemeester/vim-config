@@ -177,22 +177,24 @@ if has("gui_running")
     " c > Use console dialogs
     set guioptions=itac
     " allocate 2 pixels for folding column (even if no folding present)
-    set foldcolumn=2
+    set foldcolumn=0
     " Light background on GUI version
     set background=light
+    colorscheme github
 else
     if $TERM =~ "-256color"
         set t_Co=256
     endif
     " Dark background on CLI version (as terminal background usually dark)
     set background=dark
+    colorscheme solarized
     " Enable mouse support in CLI
     set mouse=a
 endif
 " Enable syntax !
 syntax enable
 " Colorscheme for both dark and light background
-colorscheme solarized
+" colorscheme solarized
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " }}}
@@ -294,7 +296,7 @@ let g:syntastic_disabled_filetypes = ['html']
 let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
 " }}}
 " pandoc {{{
-au BufNewFile,BufRead *.pdc   set filetype=pandoc
+au BufNewFile,BufRead *.page   set filetype=pandoc
 " }}}
 " }}}
 " Custom loading host file ---------------------------------------------------- {{{
