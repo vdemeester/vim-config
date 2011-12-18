@@ -108,8 +108,8 @@ let g:mapleader = ","
 " Change the default statusline
 set statusline=%f\ %m
 set statusline+=\ %{fugitive#statusline()}
-set statusline+=\ %#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=\ %#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=\ %h%r%=[%{&encoding}
 set statusline+=\ %{&fileformat}
