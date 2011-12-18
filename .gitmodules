@@ -1,48 +1,48 @@
-[submodule "bundle/command-t"]
-	path = bundle/command-t
+[submodule ".vim/bundle/command-t"]
+	path = .vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
-[submodule "bundle/snipmate-vim"]
-	path = bundle/snipmate-vim
+[submodule ".vim/bundle/snipmate-vim"]
+	path = .vim/bundle/snipmate-vim
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule "bundle/gundo"]
-	path = bundle/gundo
+[submodule ".vim/bundle/gundo"]
+	path = .vim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
-[submodule "bundle/fugitive"]
-	path = bundle/fugitive
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/QFixToggle"]
-	path = bundle/QFixToggle
+[submodule ".vim/bundle/QFixToggle"]
+	path = .vim/bundle/QFixToggle
 	url = git://github.com/sunaku/QFixToggle.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/narrow"]
-	path = bundle/narrow
+[submodule ".vim/bundle/narrow"]
+	path = .vim/bundle/narrow
 	url = git://github.com/kana/vim-narrow.git
-[submodule "bundle/surround"]
-	path = bundle/surround
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "bundle/unimpaired"]
-	path = bundle/unimpaired
+[submodule ".vim/bundle/unimpaired"]
+	path = .vim/bundle/unimpaired
 	url = git://github.com/vdemeester/vim-unimpaired.git
-[submodule "bundle/taglist"]
-    path = bundle/taglist
+[submodule ".vim/bundle/taglist"]
+    path = .vim/bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
-[submodule "bundle/ack"]
-	path = bundle/ack
+[submodule ".vim/bundle/ack"]
+	path = .vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "bundle/gitv"]
-	path = bundle/gitv
+[submodule ".vim/bundle/gitv"]
+	path = .vim/bundle/gitv
 	url = git://github.com/gregsexton/gitv.git
-[submodule "bundle/pandoc"]
-	path = bundle/pandoc
+[submodule ".vim/bundle/pandoc"]
+	path = .vim/bundle/pandoc
 	url = git://github.com/vim-pandoc/vim-pandoc.git
-[submodule "bundle/organizer"]
-	path = bundle/organizer
+[submodule ".vim/bundle/organizer"]
+	path = .vim/bundle/organizer
 	url = git://github.com/hsitz/VimOrganizer.git
