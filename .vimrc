@@ -290,6 +290,12 @@ let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: li
 " pandoc {{{
 au BufNewFile,BufRead *.page   set filetype=pandoc
 " }}}
+" VimOrganizer {{{
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+au BufEnter *.org           call org#SetOrgFileType()
+" Set some default tags
+let g:org_tags_alist='{@home(h) @work(w)}{easy(e) hard(d)}'
+" }}}
 " }}}
 " Custom loading host file ---------------------------------------------------- {{{
 " Custom gloabal variable These variable could be used in several plugins and
