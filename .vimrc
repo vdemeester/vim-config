@@ -179,18 +179,17 @@ if has("gui_running")
     " allocate 2 pixels for folding column (even if no folding present)
     set foldcolumn=0
     " Light background on GUI version
-    set background=light
-    colorscheme github
+    set background=dark
 else
     if $TERM =~ "-256color"
         set t_Co=256
     endif
     " Dark background on CLI version (as terminal background usually dark)
     set background=dark
-    colorscheme solarized
     " Enable mouse support in CLI
     set mouse=a
 endif
+colorscheme xoria256
 " Enable syntax !
 syntax enable
 " Colorscheme for both dark and light background
