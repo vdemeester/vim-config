@@ -16,6 +16,7 @@
 !.vim/bundle/*
 !.vim/bundle/ack
 !.vim/bundle/ack/*
+!.vim/bundle/ack/*/*
 !.vim/bundle/fugitive
 !.vim/bundle/fugitive/*
 !.vim/bundle/gitv
@@ -36,6 +37,9 @@
 !.vim/bundle/taglist/*
 !.vim/bundle/unimpaired
 !.vim/bundle/unimpaired/*
+!.vim/bundle/sessionman
+!.vim/bundle/sessionman/*
+!.vim/bundle/sessionman/*/*
 !.vim/colors
 !.vim/colors/*
 !.vim/colors/github.vim
@@ -75,3 +79,5 @@
 !.vim/vimrc-vinnsento
 !.vim/vimrc-vinssento
 !.vim/vimrc-vinssento.local
+!.gitignore.d
+!.gitignore.d/vim-config
