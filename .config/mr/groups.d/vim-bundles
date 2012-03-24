@@ -20,3 +20,9 @@ lib =
     GITHUB_USER=gregsexton
     GIT_TAG=v1.1
 checkout = github_clone
+
+[.vim/bundle/fugitive]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-fugitive
+checkout = github_clone
