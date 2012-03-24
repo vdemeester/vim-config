@@ -26,3 +26,10 @@ lib =
     GITHUB_USER=tpope
     MR_NAME=vim-fugitive
 checkout = github_clone
+
+[.vim/bundle/gundo]
+lib =
+    GITHUB_USER=sjl
+    MR_NAME=gundo.vim
+    GIT_TAG=v2.3.0
+checkout = github_clone
