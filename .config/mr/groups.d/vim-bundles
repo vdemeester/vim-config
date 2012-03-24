@@ -5,12 +5,18 @@
 lib =
     GITHUB_USER=mileszs
     MR_NAME=ack.vim
+    GIT_HASH=9895285042
 checkout = github_clone
-hash = 9895285042
 
 [.vim/bundle/ctrlp]
 lib =
     GITHUB_USER=kien
     MR_NAME=ctrlp.vim
+    GIT_TAG=1.6.5
 checkout = github_clone
-tag = 1.6.5
+
+[.vim/bundle/gitv]
+lib =
+    GITHUB_USER=gregsexton
+    GIT_TAG=v1.1
+checkout = github_clone
