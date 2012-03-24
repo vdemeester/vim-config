@@ -1,0 +1,16 @@
+# vim .mrconfig
+# This file is used to update and maintain bundle directory (vendor vim plugins)
+
+[.vim/bundle/ack]
+lib =
+    GITHUB_USER=mileszs
+    MR_NAME=ack.vim
+checkout = github_clone
+hash = 9895285042
+
+[.vim/bundle/ctrlp]
+lib =
+    GITHUB_USER=kien
+    MR_NAME=ctrlp.vim
+checkout = github_clone
+tag = 1.6.5
