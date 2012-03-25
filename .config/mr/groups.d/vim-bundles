@@ -8,6 +8,7 @@ lib =
     GIT_HASH=9895285042
 checkout = github_clone
 
+# TODO Ask for tags on github !
 [.vim/bundle/ctrlp]
 lib =
     GITHUB_USER=kien
@@ -21,10 +22,22 @@ lib =
     GIT_TAG=v1.1
 checkout = github_clone
 
+[.vim/bundle/surround]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-surround
+checkout = github_clone
+
 [.vim/bundle/fugitive]
 lib =
     GITHUB_USER=tpope
     MR_NAME=vim-fugitive
+checkout = github_clone
+
+[.vim/bundle/unimpaired]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-unimpaired
 checkout = github_clone
 
 [.vim/bundle/gundo]
@@ -33,3 +46,58 @@ lib =
     MR_NAME=gundo.vim
     GIT_TAG=v2.3.0
 checkout = github_clone
+
+[.vim/bundle/narrow]
+lib =
+    GITHUB_USER=kana
+    MR_NAME=vim-narrow
+    GIT_TAG=0.2.2
+checkout = github_clone
+
+# TODO: vim-pandoc-extras vim-markdownfootnotes
+[.vim/bundle/pandoc]
+lib =
+    GITHUB_USER=vim-pandoc
+    MR_NAME=vim-pandoc
+    GIT_TAG=2.0
+checkout = github_clone
+
+[.vim/bundle/QFixToggle]
+lib =
+    GITHUB_USER=vdemeester
+    GIT_TAG=1.1
+checkout = github_clone
+
+[.vim/bundle/sessionman]
+lib =
+    GITHUB_USER=vim-scripts
+    MR_NAME=sessionman.vim
+    GIT_TAG=1.06
+checkout = github_clone
+
+[.vim/bundle/taglist]
+lib =
+    GITHUB_USER=vim-scripts
+    MR_NAME=taglist.vim
+    GIT_TAG=4.5
+checkout = github_clone
+
+[.vim/bundle/unite]
+lib =
+    GITHUB_USER=jayed
+    MR_NAME=vim-unite
+checkout = github_clone
+
+[.vim/bundle/unite-history]
+lib =
+    GITHUB_USER=thinca
+    MR_NAME=vim-unite-history
+    GIT_TAG=v0.2.0
+checkout = github_clone
+
+[.vim/bundle/unite-ack]
+lib =
+    GITHUB_USER=t9md
+    MR_NAME=vim-unite-ack
+checkout = github_clone
+
