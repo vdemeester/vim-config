@@ -101,3 +101,8 @@ lib =
     MR_NAME=vim-unite-ack
 checkout = github_clone
 
+[.vim/bundle/gist]
+lib =
+    GITHUB_USER=mattn
+    MR_NAME=gist-vim
+checkout = github_clone
