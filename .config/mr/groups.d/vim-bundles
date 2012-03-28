@@ -106,3 +106,10 @@ lib =
     GITHUB_USER=mattn
     MR_NAME=gist-vim
 checkout = github_clone
+
+[.vim/bundle/webapi]
+lib =
+    GITHUB_USER=mattn
+    MR_NAME=webapi-vim
+checkout = github_clone
+
