@@ -61,6 +61,7 @@ lib =
     MR_NAME=vim-pandoc
     GIT_TAG=2.0
 checkout = github_clone
+skip = missing_exe pandoc
 
 [.vim/bundle/QFixToggle]
 lib =
