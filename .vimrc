@@ -245,6 +245,8 @@ nnoremap <leader>s :%s//<left>
 nnoremap <leader>v V`]
 " Tags
 nnoremap <leader>T :!ctags -R -f ./tags .<cr>
+" → save as root
+cmap w!! %!sudo tee > /dev/null %
 " }}}
 " Filetype-specific stuff ----------------------------------------------------- {{{
 " Vim {{{
