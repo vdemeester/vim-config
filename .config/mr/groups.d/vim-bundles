@@ -13,7 +13,7 @@ checkout = github_clone
 lib =
     GITHUB_USER=kien
     MR_NAME=ctrlp.vim
-    GIT_TAG=1.6.5
+    GIT_TAG=1.7.5
 checkout = github_clone
 
 [.vim/bundle/gitv]
@@ -114,3 +114,4 @@ lib =
     MR_NAME=webapi-vim
 checkout = github_clone
 
+# vim:syntax=sh
