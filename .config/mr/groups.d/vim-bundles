@@ -1,13 +1,6 @@
 # vim .mrconfig
 # This file is used to update and maintain bundle directory (vendor vim plugins)
 
-[.vim/bundle/ack]
-lib =
-    GITHUB_USER=mileszs
-    MR_NAME=ack.vim
-    GIT_HASH=9895285042
-checkout = github_clone
-
 # TODO Ask for tags on github !
 [.vim/bundle/ctrlp]
 lib =
@@ -83,24 +76,6 @@ lib =
     GIT_TAG=4.5
 checkout = github_clone
 
-[.vim/bundle/unite]
-lib =
-    GITHUB_USER=jayed
-    MR_NAME=vim-unite
-checkout = github_clone
-
-[.vim/bundle/unite-history]
-lib =
-    GITHUB_USER=thinca
-    MR_NAME=vim-unite-history
-    GIT_TAG=v0.2.0
-checkout = github_clone
-
-[.vim/bundle/unite-ack]
-lib =
-    GITHUB_USER=t9md
-    MR_NAME=vim-unite-ack
-checkout = github_clone
 
 [.vim/bundle/gist]
 lib =
@@ -113,5 +88,36 @@ lib =
     GITHUB_USER=mattn
     MR_NAME=webapi-vim
 checkout = github_clone
+
+# deleted
+[.vim/bundle/unite]
+lib =
+    GITHUB_USER=jayed
+    MR_NAME=vim-unite
+checkout = github_clone
+deleted = true
+
+[.vim/bundle/unite-history]
+lib =
+    GITHUB_USER=thinca
+    MR_NAME=vim-unite-history
+    GIT_TAG=v0.2.0
+checkout = github_clone
+deleted = true
+
+[.vim/bundle/unite-ack]
+lib =
+    GITHUB_USER=t9md
+    MR_NAME=vim-unite-ack
+checkout = github_clone
+deleted = true
+
+[.vim/bundle/ack]
+lib =
+    GITHUB_USER=mileszs
+    MR_NAME=ack.vim
+    GIT_HASH=9895285042
+checkout = github_clone
+deleted = true
 
 # vim:syntax=sh
