@@ -1,5 +1,10 @@
 # vim .mrconfig
 # This file is used to update and maintain bundle directory (vendor vim plugins)
+[.vim/bundle/unbundle]
+lib =
+    GITHUB_USER=sunaku
+    MR_NAME=vim-unbundle
+checkout = github_clone
 
 # TODO Ask for tags on github !
 [.vim/bundle/ctrlp]
