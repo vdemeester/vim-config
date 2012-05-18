@@ -31,6 +31,12 @@
 !.vim/plugin
 !.vim/plugin/*
 !.vim/plugin/scratch.vim
+!.vim/host/*
+!.vim/config
+!.vim/config/*.vim
+!.vim/config/bundle
+!.vim/config/bundle/*.vim
+.vim/config/0-host.vim
 !.vimrc
 !.vim/README.md
 !.vim/syntax
