@@ -36,6 +36,9 @@
 !.vim/config/*.vim
 !.vim/config/bundle
 !.vim/config/bundle/*.vim
+!.vim/after
+!.vim/after/*
+!.vim/after/*/*
 .vim/config/0-host.vim
 !.vimrc
 !.vim/README.md
