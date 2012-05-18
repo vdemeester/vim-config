@@ -2,7 +2,7 @@
 # This file is used to update and maintain bundle directory (vendor vim plugins)
 [.vim/bundle/unbundle]
 lib =
-    GITHUB_USER=sunaku
+    GITHUB_USER=vdemeester
     MR_NAME=vim-unbundle
 checkout = github_clone
 
