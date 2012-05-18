@@ -73,6 +73,7 @@ lib =
     MR_NAME=sessionman.vim
     GIT_TAG=1.06
 checkout = github_clone
+skip = true
 
 [.vim/bundle/taglist]
 lib =
@@ -87,12 +88,14 @@ lib =
     GITHUB_USER=mattn
     MR_NAME=gist-vim
 checkout = github_clone
+skip = true
 
 [.vim/bundle/webapi]
 lib =
     GITHUB_USER=mattn
     MR_NAME=webapi-vim
 checkout = github_clone
+skip = true
 
 # deleted
 [.vim/bundle/unite]
