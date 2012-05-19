@@ -4,8 +4,6 @@ set encoding=utf-8
 set fileencoding=utf-8
 " Fileformat
 set ffs=unix,dos,mac
-" Remembering the 600 last command. Vim default is 20.
-set history=1000
 " Hightlight the line where the cursor is.
 set cursorline
 " Hide the mouse when writing/using vim (who needs a mouse anyway !)
