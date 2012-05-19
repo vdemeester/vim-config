@@ -181,19 +181,7 @@ nnoremap <leader>T :!ctags -R -f ./tags .<cr>
 " → save as root
 cmap w!! %!sudo tee > /dev/null %
 " }}}
-" Filetype-specific stuff ----------------------------------------------------- {{{
-" Vim {{{
-" When .vimrc is editited, reoad it automatically
-autocmd! bufwritepost vimrc source $MYVIMRC
-" }}}
-" }}}
 " Plugin settings ------------------------------------------------------------- {{{
-" Ack {{{
-map <leader>a :Ack
-" }}}
-" Command-T {{{
-let g:CommandTMaxHeight = 20
-" }}}
 " Fugitive {{{
 if has("autocmd")
     autocmd BufReadPost fugitive://* set bufhidden=delete
@@ -220,18 +208,7 @@ function! ScratchToggle() " {{{
 endfunction " }}}
 nnoremap <silent> <leader><tab> :ScratchToggle<cr>
 " }}}
-" Syntastic {{{
-let g:syntastic_enable_signs = 1
-let g:syntastic_disabled_filetypes = ['html']
-let g:syntastic_stl_format = '[%E{Error 1/%e: line %fe}%B{, }%W{Warning 1/%w: line %fw}]'
-" }}}
 " pandoc {{{
 au BufNewFile,BufRead *.page   set filetype=pandoc
-" }}}
-" VimOrganizer {{{
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-au BufEnter *.org           call org#SetOrgFileType()
-" Set some default tags
-let g:org_tags_alist='{@home(h) @work(w)}{easy(e) hard(d)}'
 " }}}
 " }}}
