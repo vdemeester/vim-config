@@ -1,4 +1,6 @@
 *
+!.cfg-post.d
+!.cfg-post.d/vim-config
 !.gitignore
 !.gitmodules
 !.vim

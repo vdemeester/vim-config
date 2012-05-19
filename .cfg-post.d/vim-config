@@ -1,0 +1,15 @@
+#!/bin/sh
+# Config post script
+# The job is simple : my vim configuration is looking for files in config/
+# and the first one should be something like 0-host which should be host
+# specific.
+HOSTNAME=$(hostname)
+HOST_FOLDER="$HOME/.vim/host"
+SOURCE_FILE="${HOST_FOLDER}/${HOSTNAME}.vim"
+DEST_FILE="$HOME/.vim/config/0-host.vim"
+if test -f ${SOURCE_FILE}; then
+    if ! test -e ${DEST_FILE}; then
+        echo "Linking ${SOURCE_FILE} to ${DEST_FILE}"
+        ln $SOURCE_FILE $DEST_FILE
+    fi
+fi
