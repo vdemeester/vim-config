@@ -1,5 +1,6 @@
 # vim .mrconfig
 # This file is used to update and maintain bundle directory (vendor vim plugins)
+# Bundles {{{
 [.vim/bundle/unbundle]
 lib =
     GITHUB_USER=vdemeester
@@ -92,15 +93,6 @@ lib =
     GITHUB_USER=godlygeek
 checkout = github_clone
 
-# TODO: vim-pandoc-extras vim-markdownfootnotes
-[.vim/bundle/pandoc]
-lib =
-    GITHUB_USER=vim-pandoc
-    MR_NAME=vim-pandoc
-    GIT_TAG=2.0
-checkout = github_clone
-skip = true
-
 [.vim/bundle/QFixToggle]
 lib =
     GITHUB_USER=vdemeester
@@ -113,8 +105,56 @@ lib =
     MR_NAME=taglist.vim
     GIT_TAG=4.5
 checkout = github_clone
+# }}}
+# FtBundles {{{
+# Ruby {{{
+[.vim/ftbundle/ruby/bundler]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-bundler
+checkout = github_clone
 
-# Skip
+[.vim/ftbundle/ruby/rake]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-rake
+checkout = github_clone
+
+[.vim/ftbundle/ruby/rails]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-rails
+checkout = github_clone
+
+[.vim/ftbundle/ruby/ruby]
+lib =
+    GITHUB_USER=vim-ruby
+    MR_NAME=vim-ruby
+checkout = github_clone
+# }}}
+# Cucumber {{{
+[.vim/ftbundle/cucumber/cucumber]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-cucumber
+checkout = github_clone
+# }}}
+# Liquid {{{
+[.vim/ftbundle/liquid/liquid]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-liquid
+checkout = github_clone
+# }}}
+# Markdown {{{
+[.vim/ftbundle/markdown/markdown]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-markdown
+checkout = github_clone
+# }}}
+# }}}
+# Skip {{{
 [.vim/bundle/sessionman]
 lib =
     GITHUB_USER=vim-scripts
@@ -123,7 +163,16 @@ lib =
 checkout = github_clone
 skip = true
 
-# deleted
+# TODO: vim-pandoc-extras vim-markdownfootnotes
+[.vim/bundle/pandoc]
+lib =
+    GITHUB_USER=vim-pandoc
+    MR_NAME=vim-pandoc
+    GIT_TAG=2.0
+checkout = github_clone
+skip = true
+# }}}
+# deleted {{{
 [.vim/bundle/gist]
 lib =
     GITHUB_USER=mattn
@@ -167,5 +216,5 @@ lib =
     GIT_HASH=9895285042
 checkout = github_clone
 deleted = true
-
+# }}}
 # vim:syntax=sh
