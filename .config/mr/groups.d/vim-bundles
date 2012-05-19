@@ -20,6 +20,36 @@ lib =
     GIT_TAG=v1.1
 checkout = github_clone
 
+[.vim/bundle/commentary]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-commentary
+checkout = github_clone
+
+[.vim/bundle/abolish]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-abolish
+checkout = github_clone
+
+[.vim/bundle/endwise]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-endwise
+checkout = github_clone
+
+[.vim/bundle/eunuch]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-eunuch
+checkout = github_clone
+
+[.vim/bundle/repeat]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-repeat
+checkout = github_clone
+
 [.vim/bundle/surround]
 lib =
     GITHUB_USER=tpope
@@ -52,6 +82,16 @@ lib =
     GIT_TAG=0.2.2
 checkout = github_clone
 
+[.vim/bundle/file-line]
+lib =
+    GITHUB_USER=bogado
+checkout = github_clone
+
+[.vim/bundle/tabular]
+lib =
+    GITHUB_USER=godlygeek
+checkout = github_clone
+
 # TODO: vim-pandoc-extras vim-markdownfootnotes
 [.vim/bundle/pandoc]
 lib =
@@ -67,6 +107,14 @@ lib =
     GIT_TAG=1.1
 checkout = github_clone
 
+[.vim/bundle/taglist]
+lib =
+    GITHUB_USER=vim-scripts
+    MR_NAME=taglist.vim
+    GIT_TAG=4.5
+checkout = github_clone
+
+# Skip
 [.vim/bundle/sessionman]
 lib =
     GITHUB_USER=vim-scripts
@@ -75,29 +123,21 @@ lib =
 checkout = github_clone
 skip = true
 
-[.vim/bundle/taglist]
-lib =
-    GITHUB_USER=vim-scripts
-    MR_NAME=taglist.vim
-    GIT_TAG=4.5
-checkout = github_clone
-
-
+# deleted
 [.vim/bundle/gist]
 lib =
     GITHUB_USER=mattn
     MR_NAME=gist-vim
 checkout = github_clone
-skip = true
+deleted = true
 
 [.vim/bundle/webapi]
 lib =
     GITHUB_USER=mattn
     MR_NAME=webapi-vim
 checkout = github_clone
-skip = true
+deleted = true
 
-# deleted
 [.vim/bundle/unite]
 lib =
     GITHUB_USER=jayed
