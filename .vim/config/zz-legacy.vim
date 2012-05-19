@@ -1,6 +1,3 @@
-filetype on
-filetype plugin indent on
-set nocompatible
 " Basic options --------------------------------------------------------------- {{{
 " Set default encoding to utf-8
 set encoding=utf-8
