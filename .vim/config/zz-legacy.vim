@@ -12,8 +12,6 @@ set cursorline
 set mousehide
 " Set Mininal screen lines above/below the cursor
 set scrolloff=5
-" Do not forbid switching buffer in case of modified buffer
-set hidden
 " Indicates a fast terminal connection
 set ttyfast
 " Do not redraw the screen 
