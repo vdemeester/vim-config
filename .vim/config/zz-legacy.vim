@@ -235,16 +235,3 @@ au BufEnter *.org           call org#SetOrgFileType()
 let g:org_tags_alist='{@home(h) @work(w)}{easy(e) hard(d)}'
 " }}}
 " }}}
-" Custom loading host file ---------------------------------------------------- {{{
-" Custom gloabal variable These variable could be used in several plugins and
-" are meant to be set (or not) in the hostname-specific config file.
-" Is my keymap in bepo, or not ?
-" - yes = 1
-" - no  = 0
-" by default let say, it's not
-" if we are on a bepo keymap operating system, load the remapping file.
-if g:keymap_bepo == 1
-    exe 'source ' . $HOME . '/.vim/vimrc-bepo'
-endif
-" }}}
-
