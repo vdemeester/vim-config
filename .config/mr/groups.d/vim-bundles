@@ -160,6 +160,20 @@ lib =
     MR_NAME=vim-less
 checkout = github_clone
 # }}}
+# Java {{{
+[.vim/ftbundle/java/maven-plugin]
+lib =
+    GITHUB_USER=mikelue
+    MR_NAME=vim-maven-plugin
+checkout = github_clone
+# }}}
+# Scala {{{
+[.vim/ftbundle/scala/scala]
+lib =
+    GITHUB_USER=derekwyatt
+    MR_NAME=vim-scala
+checkout = github_clone
+# }}}
 # }}}
 # Skip {{{
 [.vim/bundle/sessionman]
