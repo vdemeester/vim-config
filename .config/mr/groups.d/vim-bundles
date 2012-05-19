@@ -153,6 +153,13 @@ lib =
     MR_NAME=vim-markdown
 checkout = github_clone
 # }}}
+# Lesscss {{{
+[.vim/ftbundle/less/less]
+lib =
+    GITHUB_USER=groenewege
+    MR_NAME=vim-less
+checkout = github_clone
+# }}}
 # }}}
 # Skip {{{
 [.vim/bundle/sessionman]
