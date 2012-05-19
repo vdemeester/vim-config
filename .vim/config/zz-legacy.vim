@@ -136,9 +136,6 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 map <leader>ev <C-w>s<C-w>t<C-w>L:e $MYVIMRC<cr>
 " }}}
 " Convenience Mapping (leader) ------------------------------------------------ {{{
-"Basically you press * or # to search for the current selection !! Really useful
-vnoremap <silent> * :call VisualSearch('f')<CR>
-vnoremap <silent> # :call VisualSearch('b')<CR>
 " keep the current selection when indenting (thanks cbus)
 vnoremap < <gv
 vnoremap > >gv
