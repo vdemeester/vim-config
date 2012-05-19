@@ -42,3 +42,6 @@ nnoremap <Leader>! /\v^[<=>]{7}( <Bar>$)/<Enter>
 "Basically you press * or # to search for the current selection !! Really useful
 vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
+
+" Substitute
+nnoremap <leader>s :%s//<left>

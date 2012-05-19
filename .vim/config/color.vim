@@ -10,3 +10,7 @@ colorscheme xoria256
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" colorise les nbsp       
+highlight NbSp ctermbg=lightgray guibg=#1A1A1A
+match NbSp /\%xa0/
