@@ -67,5 +67,9 @@
 !.config/mr
 !.config/mr/groups.d
 !.config/mr/groups.d/vim-bundles
+!.sh
+!.sh/hook
+!.sh/hook/shrc.post
+!.sh/hook/shrc.post/vim
 !.gitignore.d
 !.gitignore.d/vim-config

@@ -1,0 +1,37 @@
+# Filename:     .sh/hook/shrc.post/vim
+# Author:       Vincent Demeester
+# License:      This file is licensed under the GPL v2
+# --------------------------------------------------------------------------- #
+# This file define a vim command that will wrap the vim binary and set geeky
+# stuff like automagically start a server when in tmux, …
+# --------------------------------------------------------------------------- #
+# Set the default path to vim (pretty safe here)
+VIM=$(which vim)
+
+# This function wrap the default vim command (/usr/bin/vim) and start a server
+# session when run in a tmux session, by using the name of the session.
+function vim_wrapper() {
+    if test -n "$TMUX_SESSION_NAME"; then
+        case $1 in
+            --remote-* )
+                REMOTE_ARG=$1
+                shift
+                $VIM --servername "vim-$TMUX_SESSION_NAME" $REMOTE_ARG $*
+                ;;
+            * )
+                $VIM --servername "vim-$TMUX_SESSION_NAME" --remote-silent $*
+                ;;
+        esac
+    else
+        $VIM $*
+    fi
+}
+
+# More "specific" alias
+if test "$EDITOR" = "vim"; then
+    alias e="vim_wrapper"
+    alias ew="vim_wrapper --remote-wait"
+    alias esend="vim --remote-send"
+    alias eexpr="vim --remote-expr"
+fi
+# vim:filetype=sh foldmethod=marker autoindent expandtab shiftwidth=4
