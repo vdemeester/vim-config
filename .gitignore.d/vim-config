@@ -1,4 +1,6 @@
 *
+!bin
+!bin/vim_wrapper
 !.cfg-post.d
 !.cfg-post.d/vim-config
 !.gitignore

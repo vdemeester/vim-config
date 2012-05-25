@@ -1,0 +1,20 @@
+#!/bin/sh
+
+VIM=$(which vim)
+
+# This function wrap the default vim command (/usr/bin/vim) and start a server
+# session when run in a tmux session, by using the name of the session.
+if test -n "$TMUX_SESSION_NAME"; then
+    case $1 in
+        --remote-* )
+            REMOTE_ARG=$1
+            shift
+            $VIM --servername "vim-$TMUX_SESSION_NAME" $REMOTE_ARG $*
+            ;;
+        * )
+            $VIM --servername "vim-$TMUX_SESSION_NAME" --remote-silent $*
+            ;;
+    esac
+else
+    $VIM $*
+fi
