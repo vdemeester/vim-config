@@ -105,6 +105,11 @@ lib =
     MR_NAME=taglist.vim
     GIT_TAG=4.5
 checkout = github_clone
+[.vim/bundle/sudo]
+lib =
+    GITHUB_USER=gmarik
+    MR_NAME=sudo-gui.vim
+checkout = github_clone
 # }}}
 # FtBundles {{{
 # Ruby {{{
