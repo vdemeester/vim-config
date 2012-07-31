@@ -5,6 +5,6 @@ if has("gui_running")
 endif
 
 " Kyushu is a Linux host
-if !empty(system("setxkbmap -print|grep bepo"))
+" if !empty(system("setxkbmap -print|grep bepo"))
     let g:keymap_bepo = 1
-endif
+" endif
