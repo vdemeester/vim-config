@@ -12,7 +12,7 @@ checkout = github_clone
 lib =
     GITHUB_USER=kien
     MR_NAME=ctrlp.vim
-    GIT_TAG=1.7.5
+    GIT_TAG=1.78
 checkout = github_clone
 
 [.vim/bundle/gitv]
@@ -73,7 +73,7 @@ checkout = github_clone
 lib =
     GITHUB_USER=sjl
     MR_NAME=gundo.vim
-    GIT_TAG=v2.3.0
+    GIT_TAG=v2.4.0
 checkout = github_clone
 
 [.vim/bundle/narrow]
