@@ -115,6 +115,16 @@ lib =
     GTIHUB_USER=duellj
     MR_NAME=DirDiff.vim
 checkout = github_clone
+[.vim/bundle/gist]
+lib =
+    GITHUB_USER=mattn
+    MR_NAME=gist-vim
+checkout = github_clone
+[.vim/bundle/webapi]
+lib =
+    GITHUB_USER=mattn
+    MR_NAME=webapi-vim
+checkout = github_clone
 # }}}
 # FtBundles {{{
 # Ruby {{{
@@ -176,6 +186,11 @@ lib =
     GITHUB_USER=mikelue
     MR_NAME=vim-maven-plugin
 checkout = github_clone
+[.vim/ftbundle/java/classpath]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-classpath
+checkout = github_clone
 # }}}
 # Scala {{{
 [.vim/ftbundle/scala/scala]
@@ -204,20 +219,6 @@ checkout = github_clone
 skip = true
 # }}}
 # deleted {{{
-[.vim/bundle/gist]
-lib =
-    GITHUB_USER=mattn
-    MR_NAME=gist-vim
-checkout = github_clone
-deleted = true
-
-[.vim/bundle/webapi]
-lib =
-    GITHUB_USER=mattn
-    MR_NAME=webapi-vim
-checkout = github_clone
-deleted = true
-
 [.vim/bundle/unite]
 lib =
     GITHUB_USER=jayed
