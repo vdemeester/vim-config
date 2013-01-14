@@ -112,7 +112,7 @@ lib =
 checkout = github_clone
 [.vim/bundle/dirdiff]
 lib =
-    GTIHUB_USER=duellj
+    GITHUB_USER=duellj
     MR_NAME=DirDiff.vim
 checkout = github_clone
 [.vim/bundle/gist]
