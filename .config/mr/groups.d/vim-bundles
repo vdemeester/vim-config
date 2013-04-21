@@ -6,7 +6,6 @@ lib =
     GITHUB_USER=vdemeester
     MR_NAME=vim-unbundle
 checkout = github_clone
-
 # TODO Ask for tags on github !
 [.vim/bundle/ctrlp]
 lib =
@@ -124,6 +123,11 @@ checkout = github_clone
 lib =
     GITHUB_USER=mattn
     MR_NAME=webapi-vim
+checkout = github_clone
+[.vim/bundle/dispatch]
+lib =
+    GITHUB_USER=tpope
+    MR_NAME=vim-dispatch
 checkout = github_clone
 # }}}
 # FtBundles {{{
