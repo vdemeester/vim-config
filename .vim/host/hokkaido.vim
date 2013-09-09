@@ -1,7 +1,7 @@
 " force terminal to use 256 colors
 set t_Co=256
 if has("gui_running")
-    set guifont=Monospace\ 8
+    set guifont=Ubuntu\ Mono\ 11
 endif
 
 " Kyushu is a Linux host
