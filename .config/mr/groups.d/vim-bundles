@@ -6,108 +6,26 @@ lib =
     GITHUB_USER=vdemeester
     MR_NAME=vim-unbundle
 checkout = github_clone
-# TODO Ask for tags on github !
-[.vim/bundle/ctrlp]
-lib =
-    GITHUB_USER=kien
-    MR_NAME=ctrlp.vim
-    GIT_TAG=1.78
-checkout = github_clone
-
 [.vim/bundle/gitv]
 lib =
     GITHUB_USER=gregsexton
     GIT_TAG=v1.1
 checkout = github_clone
-
-[.vim/bundle/commentary]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-commentary
-checkout = github_clone
-
-[.vim/bundle/abolish]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-abolish
-checkout = github_clone
-
-[.vim/bundle/endwise]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-endwise
-checkout = github_clone
-
 [.vim/bundle/eunuch]
 lib =
     GITHUB_USER=tpope
     MR_NAME=vim-eunuch
 checkout = github_clone
-
-[.vim/bundle/repeat]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-repeat
-checkout = github_clone
-
-[.vim/bundle/surround]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-surround
-checkout = github_clone
-
-[.vim/bundle/fugitive]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-fugitive
-checkout = github_clone
-
-[.vim/bundle/unimpaired]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-unimpaired
-checkout = github_clone
-
 [.vim/bundle/gundo]
 lib =
     GITHUB_USER=sjl
     MR_NAME=gundo.vim
     GIT_TAG=v2.4.0
 checkout = github_clone
-
-[.vim/bundle/narrow]
-lib =
-    GITHUB_USER=kana
-    MR_NAME=vim-narrow
-    GIT_TAG=0.2.2
-checkout = github_clone
-
-[.vim/bundle/file-line]
-lib =
-    GITHUB_USER=bogado
-checkout = github_clone
-
-[.vim/bundle/tabular]
-lib =
-    GITHUB_USER=godlygeek
-checkout = github_clone
-
 [.vim/bundle/QFixToggle]
 lib =
     GITHUB_USER=vdemeester
     GIT_TAG=1.1
-checkout = github_clone
-
-[.vim/bundle/taglist]
-lib =
-    GITHUB_USER=vim-scripts
-    MR_NAME=taglist.vim
-    GIT_TAG=4.5
-checkout = github_clone
-[.vim/bundle/sudo]
-lib =
-    GITHUB_USER=gmarik
-    MR_NAME=sudo-gui.vim
 checkout = github_clone
 [.vim/bundle/dirdiff]
 lib =
@@ -124,133 +42,5 @@ lib =
     GITHUB_USER=mattn
     MR_NAME=webapi-vim
 checkout = github_clone
-[.vim/bundle/dispatch]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-dispatch
-checkout = github_clone
-# }}}
-# FtBundles {{{
-# Ruby {{{
-[.vim/ftbundle/ruby/bundler]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-bundler
-checkout = github_clone
-
-[.vim/ftbundle/ruby/rake]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-rake
-checkout = github_clone
-
-[.vim/ftbundle/ruby/rails]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-rails
-checkout = github_clone
-
-[.vim/ftbundle/ruby/ruby]
-lib =
-    GITHUB_USER=vim-ruby
-    MR_NAME=vim-ruby
-checkout = github_clone
-# }}}
-# Cucumber {{{
-[.vim/ftbundle/cucumber/cucumber]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-cucumber
-checkout = github_clone
-# }}}
-# Liquid {{{
-[.vim/ftbundle/liquid/liquid]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-liquid
-checkout = github_clone
-# }}}
-# Markdown {{{
-[.vim/ftbundle/markdown/markdown]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-markdown
-checkout = github_clone
-# }}}
-# Lesscss {{{
-[.vim/ftbundle/less/less]
-lib =
-    GITHUB_USER=groenewege
-    MR_NAME=vim-less
-checkout = github_clone
-# }}}
-# Java {{{
-[.vim/ftbundle/java/maven-plugin]
-lib =
-    GITHUB_USER=mikelue
-    MR_NAME=vim-maven-plugin
-checkout = github_clone
-[.vim/ftbundle/java/classpath]
-lib =
-    GITHUB_USER=tpope
-    MR_NAME=vim-classpath
-checkout = github_clone
-# }}}
-# Scala {{{
-[.vim/ftbundle/scala/scala]
-lib =
-    GITHUB_USER=derekwyatt
-    MR_NAME=vim-scala
-checkout = github_clone
-# }}}
-# }}}
-# Skip {{{
-[.vim/bundle/sessionman]
-lib =
-    GITHUB_USER=vim-scripts
-    MR_NAME=sessionman.vim
-    GIT_TAG=1.06
-checkout = github_clone
-skip = true
-
-# TODO: vim-pandoc-extras vim-markdownfootnotes
-[.vim/bundle/pandoc]
-lib =
-    GITHUB_USER=vim-pandoc
-    MR_NAME=vim-pandoc
-    GIT_TAG=2.0
-checkout = github_clone
-skip = true
-# }}}
-# deleted {{{
-[.vim/bundle/unite]
-lib =
-    GITHUB_USER=jayed
-    MR_NAME=vim-unite
-checkout = github_clone
-deleted = true
-
-[.vim/bundle/unite-history]
-lib =
-    GITHUB_USER=thinca
-    MR_NAME=vim-unite-history
-    GIT_TAG=v0.2.0
-checkout = github_clone
-deleted = true
-
-[.vim/bundle/unite-ack]
-lib =
-    GITHUB_USER=t9md
-    MR_NAME=vim-unite-ack
-checkout = github_clone
-deleted = true
-
-[.vim/bundle/ack]
-lib =
-    GITHUB_USER=mileszs
-    MR_NAME=ack.vim
-    GIT_HASH=9895285042
-checkout = github_clone
-deleted = true
 # }}}
 # vim:syntax=sh
